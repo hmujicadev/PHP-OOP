@@ -17,7 +17,7 @@ class Persona {
         
     }
 
-    public function __construct($nombre,$apellido){
+    public function __construct($nombre = 'Oscar',$apellido = 'Sanchez'){
 
         $this->setNombre($nombre);
 
