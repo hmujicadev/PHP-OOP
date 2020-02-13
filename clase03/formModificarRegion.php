@@ -21,7 +21,7 @@
                 <br>
 
                 <input class="form-control" type="text" name="regNombre" id="" value="<?= $region['regNombre'] ?>">
-
+                <input type="hidden" name="regID" id="" value="<?= $region['regID'] ?>">
                 <br>
 
                 <button class="btn-dark">Modificar</button>
