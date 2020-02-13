@@ -19,6 +19,19 @@
         return $regiones;
       }
 
+      public function listarRegionPorId(){
+          
+        $regID = $_GET['regID'];
+          
+        $link = Conexion::conectar();
+	    $sql = "SELECT regID,regNombre FROM regiones WHERE regID =".$regID;
+	    $stmt = $link->prepare($sql);
+	    $stmt->execute();
+         $region = $stmt->fetch();
+         
+        return $region;
+      }
+
       public function verRegionPorId(){
 
       }

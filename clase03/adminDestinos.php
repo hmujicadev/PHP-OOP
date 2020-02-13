@@ -33,7 +33,7 @@
                 <tr>
                     <td><?= $destino['destID']?></td>
                     <td><?= $destino['destNombre']?></td>
-                    <th><?= $destino['regID']?></th>
+                    <th><?= $destino['regNombre']?></th>
                     <th><?= $destino['destPrecio']?></th>
                     <th><?= $destino['destAsientos']?></th>
                     <th><?= $destino['destDisponibles']?></th>

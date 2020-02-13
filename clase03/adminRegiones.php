@@ -18,7 +18,7 @@
                     <th>id</th>
                     <th>Región</th>
                     <th colspan="2">
-                        <a href="" class="btn btn-dark">
+                        <a href="formAddRegion.php" class="btn btn-dark">
                             agregar
                         </a>
                     </th>
@@ -30,7 +30,7 @@
                     <td><?= $region['regID']?></td>
                     <td><?= $region['regNombre']?></td>
                     <td>
-                        <a href="" class="btn btn-dark">
+                        <a href="formModificarRegion.php?regID=<?= $region['regID']?>" class="btn btn-dark">
                             modificar
                         </a>
                     </td>

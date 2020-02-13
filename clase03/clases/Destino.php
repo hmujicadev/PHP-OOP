@@ -24,12 +24,13 @@
             $sql = " SELECT
             destID,
             destNombre,
-            regID,
+            d.regID,
+            r.regNombre,
             destPrecio,
             destAsientos,
             destAsientos,
             destDisponibles,
-            destActivo FROM destinos";
+            destActivo FROM destinos d LEFT JOIN regiones r ON r.regID = d.regID";
 
             $stmt = $link->prepare($sql);
             $stmt->execute();
