@@ -31,6 +31,26 @@
             $region = $stmt->fetch();
             return $region;
         }
+
+        public function agregarRegion()
+        {
+            $regNombre = $_POST['regNombre'];
+            $link = Conexion::conectar();
+            $sql = "INSERT INTO regiones
+                        ( regNombre )
+                     VALUES
+                        ( :regNombre )";
+            $stmt = $link->prepare($sql);
+            $stmt->bindParam(':regNombre', $regNombre, PDO::PARAM_STR);
+
+            if( $stmt->execute() ){
+                $this->setRegNombre($regNombre);
+                $this->setRegID($link->lastInsertId());
+                return true;
+            }
+            return false;
+        }
+        
         ##########
         /*
          * + listarRegion( ): [ ]

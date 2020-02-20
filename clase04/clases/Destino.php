@@ -48,6 +48,41 @@
             return $destino;
         }
 
+        public function agregarDestino()
+        {
+            $destNombre = $_POST['destNombre'];
+            $destPrecio = $_POST['destPrecio'];
+            $regID = $_POST['regID'];
+            $destAsientos = $_POST['destAsientos'];
+            $destDisponibles = $_POST['destDisponibles'];
+            $link = Conexion::conectar();
+            $sql = "INSERT INTO destinos
+                      VALUES ( 
+                            DEFAULT, :destNombre, :destPrecio,
+                                :regID,
+                                :destAsientos, :destDisponibles, 1
+                             )";
+            $stmt = $link->prepare($sql);
+            $stmt->bindParam(':destNombre', $destNombre, PDO::PARAM_STR);
+            $stmt->bindParam(':destPrecio', $destPrecio, PDO::PARAM_INT);
+            $stmt->bindParam(':regID', $regID, PDO::PARAM_INT);
+            $stmt->bindParam(':destAsientos', $destAsientos, PDO::PARAM_INT);
+            $stmt->bindParam(':destDisponibles', $destDisponibles, PDO::PARAM_INT);
+
+            if($stmt->execute()){
+                $this->setDestID($link->lastInsertId());
+                $this->setDestNombre($destNombre);
+                $this->setDestPrecio($destPrecio);
+                $this->setRegID($regID);
+                $this->setDestAsientos($destAsientos);
+                $this->setDestDisponibles($destDisponibles);
+                $this->setDestActivo(1);
+                return true;
+            }
+                return false;
+        }
+        
+        
         /**
          * @return mixed
          */
