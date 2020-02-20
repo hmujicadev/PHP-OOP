@@ -1,7 +1,5 @@
 <?php
     require 'config/config.php';
-    require 'clases/Conexion.php';
-    require 'clases/Destino.php';
     $objDestino = new Destino;
     $destino = $objDestino->verDestinoPorID();
     require 'clases/Region.php';

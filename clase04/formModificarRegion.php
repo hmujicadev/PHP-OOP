@@ -1,7 +1,5 @@
 <?php
     require 'config/config.php';
-    require 'clases/Conexion.php';
-    require 'clases/Region.php';
     $objRegion = new Region;
     $region = $objRegion->verRegionPorID();
     include 'templates/header.php';
