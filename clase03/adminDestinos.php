@@ -22,7 +22,7 @@
                     <th>Asientos</th>
                     <th>Disponibles</th>
                     <th colspan="2">
-                        <a href="" class="btn btn-dark">
+                        <a href="formAgregarDestino.php" class="btn btn-dark">
                             agregar
                         </a>
                     </th>
